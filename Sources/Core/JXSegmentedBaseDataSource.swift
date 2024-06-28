@@ -138,6 +138,12 @@ open class JXSegmentedBaseDataSource: JXSegmentedViewDataSource {
             willSelectedItemModel.itemWidthCurrentZoomScale = willSelectedItemModel.itemWidthSelectedZoomScale
         }
     }
+    
+    open func resetAction() {
+        animator?.stop()
+        animator?.progressClosure = nil
+        animator = nil
+    }
 
     open func refreshItemModel(_ segmentedView: JXSegmentedView, leftItemModel: JXSegmentedBaseItemModel, rightItemModel: JXSegmentedBaseItemModel, percent: CGFloat) {
         //如果正在进行itemWidth缩放动画，用户又立马滚动了contentScrollView，需要停止动画。
