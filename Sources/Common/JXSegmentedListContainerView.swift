@@ -215,6 +215,11 @@ open class JXSegmentedListContainerView: UIView, JXSegmentedViewListContainer, J
 
     public func scrolling(from leftIndex: Int, to rightIndex: Int, percent: CGFloat, selectedIndex: Int) {
     }
+    
+    public func setContainerBackgroundColor(_ color: UIColor?) {
+        scrollView.backgroundColor = color
+        scrollView.backgroundColor = color
+    }
 
     open func didClickSelectedItem(at index: Int) {
         guard checkIndexValid(index) else {
